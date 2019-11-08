@@ -1,10 +1,6 @@
 # doc
 Documentation for epiSphere projects
 
-### Account creation
-created on [draw.io](http://draw.io) \
-Files:
-  1. AccountCreationSeqDiag.drawio (Editable)
-  2. AccountCreationSeqDiag.svg
-  
-![Account Creation diagram](AccountCreationSeqDiag.svg)
+#### Sequence Diagrams
+1. [Account creation](AccountCreation/README.md)
+

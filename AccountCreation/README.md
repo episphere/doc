@@ -1,7 +1,4 @@
-# doc
-Documentation for epiSphere projects
-
-### Account creation
+# Account creation
 created on [draw.io](http://draw.io) \
 Files:
   1. AccountCreationSeqDiag.drawio (Editable)

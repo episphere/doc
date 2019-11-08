@@ -1,0 +1,88 @@
+<mxfile host="www.draw.io" modified="2019-11-08T17:49:31.040Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36" etag="p0oEqvW5FBNTwYcGKyDW" version="12.2.3" type="github" pages="1">
+  <diagram id="v4PFHeJzPm_GTIy-xMRC" name="Page-1">
+    <mxGraphModel dx="973" dy="678" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="cKKCN1-lQQe8Lq2tKn_J-21" value="" style="shape=umlLifeline;participant=umlActor;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=36;labelBackgroundColor=#ffffff;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="60" y="30" width="20" height="560" as="geometry"/>
+        </mxCell>
+        <mxCell id="cKKCN1-lQQe8Lq2tKn_J-22" value="&lt;div&gt;NCI website&lt;/div&gt;&lt;div&gt;(github)&lt;br&gt;&lt;/div&gt;" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="158" y="30" width="100" height="560" as="geometry"/>
+        </mxCell>
+        <mxCell id="cKKCN1-lQQe8Lq2tKn_J-24" value="&lt;div&gt;Google&lt;/div&gt;" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="310" y="30" width="100" height="560" as="geometry"/>
+        </mxCell>
+        <mxCell id="qH64ivUAVev2pE-7qa_J-1" value="Welcome" style="html=1;verticalAlign=bottom;endArrow=block;" parent="1" edge="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="70" y="90" as="sourcePoint"/>
+            <mxPoint x="207.5" y="90" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Zcy-h76g3Nsfoif8VQfE-3" value="Sign in or create Accnt" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="70" y="133" as="sourcePoint"/>
+            <mxPoint x="359.5" y="133" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Zcy-h76g3Nsfoif8VQfE-4" value="return signin page" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="113" as="sourcePoint"/>
+            <mxPoint x="70" y="113" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Zcy-h76g3Nsfoif8VQfE-6" value="return uid" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="154" as="sourcePoint"/>
+            <mxPoint x="70" y="154" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Zcy-h76g3Nsfoif8VQfE-9" value="USER Selected" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="71.5" y="180" as="sourcePoint"/>
+            <mxPoint x="209" y="180" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Zcy-h76g3Nsfoif8VQfE-17" value="not consented" style="shape=umlFrame;whiteSpace=wrap;html=1;width=102;height=30;" vertex="1" parent="1">
+          <mxGeometry x="60" y="280" width="200" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="Zcy-h76g3Nsfoif8VQfE-18" value="consent" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="68.5" y="354" as="sourcePoint"/>
+            <mxPoint x="208" y="354.5" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Zcy-h76g3Nsfoif8VQfE-21" value="redirect to consent" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="334" as="sourcePoint"/>
+            <mxPoint x="70" y="334" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Zcy-h76g3Nsfoif8VQfE-24" value="not user info collected&amp;nbsp;" style="shape=umlFrame;whiteSpace=wrap;html=1;width=130;height=25;" vertex="1" parent="1">
+          <mxGeometry x="60" y="400" width="200" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="Zcy-h76g3Nsfoif8VQfE-23" value="collect PII" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="70" y="440" as="sourcePoint"/>
+            <mxPoint x="209.5" y="440.5" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cKKCN1-lQQe8Lq2tKn_J-10" value="email not verified" style="shape=umlFrame;whiteSpace=wrap;html=1;width=120;height=20;" parent="1" vertex="1">
+          <mxGeometry x="60" y="190" width="320" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="Zcy-h76g3Nsfoif8VQfE-11" value="click verification line" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="70" y="250" as="sourcePoint"/>
+            <mxPoint x="360" y="250" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Zcy-h76g3Nsfoif8VQfE-20" value="email verification link" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="230" as="sourcePoint"/>
+            <mxPoint x="70" y="230" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

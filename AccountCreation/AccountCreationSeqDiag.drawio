@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2019-11-19T20:35:16.914Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36" etag="LbNDaqIk_1TvL2SZeaaf" version="12.2.7" type="github" pages="1">
+<mxfile host="www.draw.io" modified="2019-11-19T20:36:12.839Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36" etag="jNuhh2fbIy3atpP6rzkP" version="12.2.7" type="github" pages="1">
   <diagram id="v4PFHeJzPm_GTIy-xMRC" name="Page-1">
     <mxGraphModel dx="934" dy="673" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
       <root>
@@ -11,7 +11,7 @@
           <mxGeometry x="158" y="30" width="100" height="970" as="geometry"/>
         </mxCell>
         <mxCell id="cKKCN1-lQQe8Lq2tKn_J-24" value="&lt;div&gt;Google&lt;/div&gt;&lt;div&gt;(trusted authentication partner)&lt;/div&gt;" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
-          <mxGeometry x="290" y="40" width="160" height="960" as="geometry"/>
+          <mxGeometry x="290" y="30" width="160" height="970" as="geometry"/>
         </mxCell>
         <mxCell id="cKKCN1-lQQe8Lq2tKn_J-10" value="email not verified" style="shape=umlFrame;whiteSpace=wrap;html=1;width=120;height=20;" parent="cKKCN1-lQQe8Lq2tKn_J-24" vertex="1">
           <mxGeometry x="-250" y="416" width="350" height="84" as="geometry"/>
@@ -117,7 +117,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="Zcy-h76g3Nsfoif8VQfE-24" value="not user info collected&amp;nbsp;" style="shape=umlFrame;whiteSpace=wrap;html=1;width=130;height=25;" parent="1" vertex="1">
-          <mxGeometry x="60" y="689" width="200" height="70" as="geometry"/>
+          <mxGeometry x="60" y="689" width="500" height="70" as="geometry"/>
         </mxCell>
         <mxCell id="Zcy-h76g3Nsfoif8VQfE-23" value="collect PII" style="html=1;verticalAlign=bottom;endArrow=block;" parent="1" edge="1">
           <mxGeometry width="80" relative="1" as="geometry">

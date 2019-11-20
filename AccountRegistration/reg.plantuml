@@ -1,7 +1,7 @@
 @startuml
 skinparam shadowing false
 actor Patient as A
-participant "Connect App" as CA
+participant "Connect Registration App" as CA
 participant "Connect API" as API
 participant "Health Care Partner (HCP)" as HCP
 participant "Authentication service" as AS

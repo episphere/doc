@@ -1,0 +1,63 @@
+@startuml
+skinparam shadowing false
+actor Patient as A
+participant "Connect App" as CA
+participant "Connect API" as API
+participant "Health Care Partner (HCP)" as HCP
+participant "Authentication service" as AS
+
+A ->CA: index.html
+A <-- CA: web page
+A ->CA: join()
+alt No Token 
+  CA -> A: HealthCareProvider?
+  note left
+    The user may have a 
+    pin. Check the HCP
+  end note
+
+  A --> CA: response
+
+  alt HCP sends PINs
+    CA -> A: requestPIN
+    A --> CA: PIN
+    CA -> API: requestToken(pin)
+    CA <-- API: token
+    alt !valid pin
+       CA -> HCP: divertUser(pin,token)
+    end
+  else
+    CA -> API: requestToken()
+    CA <-- API: token
+  end
+end
+CA -> A:  loginPlease()
+  note left
+    At this point
+    I have a token
+  end note
+A --> AS: login()
+AS --> CA: login
+
+alt email not verified
+  CA --> A: email verification link
+  A --> AS: verify email
+end
+
+alt not consented
+  CA --> A: consentform
+  A -> CA: consent
+  CA -> API: consent()
+end
+
+alt UserProfile not created
+  A -> CA: updateProfile
+  note left
+    This is PII
+  end note
+  CA -> HCP: Confirm Study Participant
+  CA -> A: ThankYou
+end
+
+
+@enduml

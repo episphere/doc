@@ -76,18 +76,28 @@ alt not consented
   CA <-- API: return
 end
 
-alt UserProfile not confirmed
-  CA -> HCP: divertUser
-  HCP -> A: updateProfile
-  A --> HCP: updateProfile
-  note left
-    This is PII
-  end note
-  HCP -> A:  ThankYouComeBackLater
+
+CA -> A: updateProfile
+A --> CA: updateProfile
+CA --> API: updateProfile
+API --> CA: return
+
+alt Eligiblity not confirmed
+  alt Not Waiting
+    CA --> HCP: CheckEligibilty
+    HCP --> CA: return
+    CA -> A:  ThankYouComeBackLater
   ...HCP confirms study participant eligibility ...
+  else Waiting for Eligibility
+    CA -> A:  ThankYouComeBackLater
+  end
   HCP -> API: confirmParticipant()
 end
-CA --> A: YouAreRegistered
 
+alt Eligiblity Confirmed
+  CA --> A: YouAreRegistered
+else Confirmed Not Eligible
+  CA --> A: SorryNotEligible
+end
 
 @enduml

@@ -9,7 +9,19 @@ participant "Authentication service" as AS
 A ->CA: index.html
 A <-- CA: web page
 A ->CA: join()
-alt No Token 
+CA -> A:  loginPlease()
+A --> AS: login()
+AS --> CA: login
+  note right
+    At this point
+    I have a google token.
+    If I have already seen
+    the google token with
+    a valid pin/token, we
+    have a returning user.
+  end note
+
+alt No Token & New User
   CA -> A: HealthCareProvider?
   note left
     The user may have a 
@@ -21,26 +33,39 @@ alt No Token
   alt HCP sends PINs
     CA -> A: requestPIN
     A --> CA: PIN
+    alt valid pin
     CA -> API: requestToken(pin)
     CA <-- API: token
-    alt !valid pin
+    CA -> API: associateTokenWithGoogleToken()
+    CA <-- API: return
+    note left
+        Now is a "returning User" ....
+    end note
+    
+    else !valid pin
        CA -> HCP: divertUser(pin,token)
+       destroy HCP
     end
-  else
-    CA -> API: requestToken()
-    CA <-- API: token
+    
+  else HCP does not send pins
+    CA -> HCP: divertUserNoPINorToken()
+    destroy HCP
   end
-end
-CA -> A:  loginPlease()
+else Have Token & New User
+  CA -> API: associateTokenWithGoogleToken
+  CA <-- API: return
   note left
-    At this point
-    I have a token
+      Now is a "returning User" ....
   end note
-A --> AS: login()
-AS --> CA: login
+end
 
 alt email not verified
   CA --> A: email verification link
+  note left #f0262d
+    I dont know if this
+    step is required.
+  end note
+
   A --> AS: verify email
 end
 
@@ -48,16 +73,21 @@ alt not consented
   CA --> A: consentform
   A -> CA: consent
   CA -> API: consent()
+  CA <-- API: return
 end
 
-alt UserProfile not created
-  A -> CA: updateProfile
+alt UserProfile not confirmed
+  CA -> HCP: divertUser
+  HCP -> A: updateProfile
+  A --> HCP: updateProfile
   note left
     This is PII
   end note
-  CA -> HCP: Confirm Study Participant
-  CA -> A: ThankYou
+  HCP -> A:  ThankYouComeBackLater
+  ...HCP confirms study participant eligibility ...
+  HCP -> API: confirmParticipant()
 end
+CA --> A: YouAreRegistered
 
 
 @enduml

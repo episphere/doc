@@ -3,7 +3,7 @@ skinparam shadowing false
 actor Patient as A
 participant "Connect Registration App" as CA
 participant "Connect API" as API
-participant "Health Care Partner (HCP)" as HCP
+participant "Integrated Health Care System (IHCS)" as HCP
 participant "Authentication service" as AS
 
 A ->CA: index.html
@@ -20,6 +20,17 @@ AS --> CA: login
     a valid pin/token, we
     have a returning user.
   end note
+alt email not verified
+  CA --> A: email verification link
+  note left #f0262d
+    I dont know if this
+    step is required.
+  end note
+
+  A --> AS: verify email
+  destroy AS
+end
+
 
 alt No Token & New User
   CA -> A: HealthCareProvider?
@@ -59,15 +70,6 @@ else Have Token & New User
   end note
 end
 
-alt email not verified
-  CA --> A: email verification link
-  note left #f0262d
-    I dont know if this
-    step is required.
-  end note
-
-  A --> AS: verify email
-end
 
 alt not consented
   CA --> A: consentform
@@ -82,22 +84,15 @@ A --> CA: updateProfile
 CA --> API: updateProfile
 API --> CA: return
 
-alt Eligiblity not confirmed
-  alt Not Waiting
-    CA --> HCP: CheckEligibilty
+alt IdentityVerification Not Started
+    CA --> HCP: CheckIdentity
     HCP --> CA: return
-    CA -> A:  ThankYouComeBackLater
-  ...HCP confirms study participant eligibility ...
-  else Waiting for Eligibility
-    CA -> A:  ThankYouComeBackLater
-  end
+  ...HCP confirms study participant Identity ...
   HCP -> API: confirmParticipant()
 end
 
-alt Eligiblity Confirmed
-  CA --> A: YouAreRegistered
-else Confirmed Not Eligible
-  CA --> A: SorryNotEligible
-end
+CA -> A: Questionnaire
+A --> CA: results
+CA --> API: results
 
 @enduml

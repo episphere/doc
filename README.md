@@ -6,3 +6,7 @@ Documentation for epiSphere projects
 
 #### Use Case Diagrams
 1. [Connect Web App](connectApp/README.md)
+
+
+### Test Strategy
+1. [online version at box](https://nih.app.box.com/file/405117298887)
